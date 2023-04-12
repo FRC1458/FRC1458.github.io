@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Measuring Tape",
+    "amount": "0",
+    "location": {
+      "area": "Location",
+      "image": "img file here"
+    },
+    "website": "wheretobuythispart",
+    "tags": "Measurement Tool"
+  },
+  {
+    "id": 2,
+    "name": "Wrench",
+    "amount": "3",
+    "location": {
+      "area": "Location",
+      "image": "img file here"
+    },
+    "website": "wheretobuythispart",
+    "tags": "Tool"
+  },
+  {
+    "id": 3,
+    "name": "Computer",
+    "amount": "2",
+    "location": {
+      "area": "Location",
+      "image": "img file here"
+    },
+    "website": "wheretobuythispart",
+    "tags": "Device"
+  },
+  {
+    "id": 4,
+    "name": "Drill",
+    "amount": "4",
+    "location": {
+      "area": "Location",
+      "image": "img file here"
+    },
+    "website": "wheretobuythispart",
+    "tags": "Tool"
+  },
+  {
+    "id": 5,
+    "name": "Robot",
+    "amount": "1",
+    "location": {
+      "area": "Location",
+      "image": "img file here"
+    },
+    "website": "wheretobuythispart",
+    "tags": "Miscellaneous"
+  },
+  {
+    "id": 6,
+    "name": "Gamepiece",
+    "amount": "2",
+    "location": {
+      "area": "Location",
+      "image": "img file here"
+    },
+    "website": "wheretobuythispart",
+    "tags": "Miscellaneous"
+  }
+]
