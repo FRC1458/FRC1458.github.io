@@ -39,7 +39,14 @@ fetch('inventory.json')
 function showInfo(item) {
   const header = document.querySelector("[info-header]");
   const amount = document.querySelector("[info-amount]");
+  const location = document.querySelector("[info-location]");
+  const website = document.querySelector("[info-website]");
+  const description = document.querySelector("[info-description]");
+  const image = document.querySelector("[info-image]");
   header.textContent = item.name;
-  amount.textContent = item.amount;
+  amount.textContent = `Amount: ${item.amount}`;
+  location.textContent = item.location.area;
+  website.textContent = item.website;
+  description.textContent = item.description;
   console.log(item)
 }

@@ -100,10 +100,24 @@ body {
 }
 
 .information > .header {
-  margin-bottom: .25rem;
-  margin-left: 10px;
+  text-align: center;
   font-size: 24px;
-  justify-content: rigth;
+}
+.information > .amount {
+  margin-top: 4%;
+  margin-left: 8%;
+}
+.information > .location {
+  margin-top: 4%;
+  margin-left: 8%;
+}
+.information > .website {
+  margin-top: 4%;
+  margin-left: 8%;
+}
+.information > .description {
+  margin-top: 4%;
+  margin-left: 8%;
 }
 
 .add-item {
