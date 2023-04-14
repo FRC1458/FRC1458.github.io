@@ -28,12 +28,47 @@
     <div class="header" info-header></div>
     <div class="amount" info-amount></div>
     <div class="location" info-location></div>
-    <div class="website" info-website></div>
+    <a id="info-website" target="_blank">Order</a>
     <div class="description" info-description></div>
-    <div class="image" info-image></div>
+    <img id="info-image" alt="image failed to load">
   </section>
   <section class="add-item" add-item>
-    <div class="header">This will be used to add items</div>
+    <div class="header">Add New Item</div>
+    <div class="name">
+      <p>Name: </p>
+      <form>
+        <input type="user-input" name="name" id="name" placeholder="Item name">
+      </form>
+    </div>
+    <div class="amount">
+      <p>Amount: </p>
+      <form>
+        <input type="number" name="name" id="name" placeholder="0" min="0">
+      </form>
+    </div>
+    <div class="location">
+      <p>Location: </p>
+      <form>
+        <input type="user-input" name="name" id="name" placeholder="Item location">
+      </form>
+    </div>
+    <div class="order">
+      <p>Order from: </p>
+      <form>
+        <input type="user-input" name="name" id="name" placeholder="website.com">
+      </form>
+    </div>
+    <div class="description">
+      <p>Description: </p>
+      <form>
+        <input type="user-input" name="name" id="name" placeholder="Item description">
+      </form>
+    </div>
+    <div class="image">
+      <form>
+        <input type="file" name="upload" accept="image/*"/>
+      </form>
+    </div>
   </section>
 </body>
 </html>

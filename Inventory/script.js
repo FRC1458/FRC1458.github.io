@@ -40,13 +40,14 @@ function showInfo(item) {
   const header = document.querySelector("[info-header]");
   const amount = document.querySelector("[info-amount]");
   const location = document.querySelector("[info-location]");
-  const website = document.querySelector("[info-website]");
+  const website = document.querySelector("#info-website");
   const description = document.querySelector("[info-description]");
-  const image = document.querySelector("[info-image]");
+  const image = document.querySelector("#info-image");
   header.textContent = item.name;
   amount.textContent = `Amount: ${item.amount}`;
   location.textContent = item.location.area;
-  website.textContent = item.website;
+  website.href = item.website;
   description.textContent = item.description;
+  image.src = item.location.image;
   console.log(item)
 }
