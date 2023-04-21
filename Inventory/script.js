@@ -51,3 +51,77 @@ function showInfo(item) {
   image.src = item.location.image;
   console.log(item)
 }
+
+
+const newItemAmount = document.querySelector('[new-item-amount]');
+const newItemIncrementAmount = document.querySelector('[new-item-increment-amount]');
+const newItemDecrementAmount = document.querySelector('[new-item-decrement-amount]');
+
+newItemIncrementAmount.addEventListener('click', () => {
+  const val = parseInt(newItemAmount.value) || 0;
+  if (val < 99) newItemAmount.value = val + 1;
+})
+
+newItemDecrementAmount.addEventListener('click', () => {
+  if (parseInt(newItemAmount.value) > 0) newItemAmount.value = parseInt(newItemAmount.value) - 1;
+})
+
+newItemAmount.addEventListener('keypress', function(event) {
+  if (event.keyCode === 13) {
+  if (parseInt(newItemAmount.value) < 0) newItemAmount.value = 0;
+  if (parseInt(newItemAmount.value) > 99) newItemAmount.value = 99;
+  }
+})
+
+newItemAmount.addEventListener('blur', () => {
+  const val = parseInt(newItemAmount.value);
+  if (val > 99) newItemAmount.value = 99;
+  if (val < 0) newItemAmount.value = 0;
+})
+
+let fileInput = document.getElementById("file-input");
+let imageContainer = document.getElementById("images");
+let numOfFiles = document.getElementById("num-of-files");
+
+fileInput.addEventListener('input', () => preview())
+
+function preview() {
+  imageContainer.innerHTML = "";
+  numOfFiles.textContent = `${fileInput.files.length} Files Selected`
+
+  for (i of fileInput.files) {
+    let reader = new FileReader();
+    let figure = document.createElement("figure");
+    let figCap = document.createElement("figcaption");
+    figCap.innerText = i.name;
+    figure.appendChild(figCap);
+    reader.onload = () => {
+      let img = document.createElement("img");
+      img.setAttribute("src", reader.result);
+      img.style.height = "100px";  
+      figure.insertBefore(img, figCap);
+    }
+    imageContainer.appendChild(figure);
+    reader.readAsDataURL(i);
+  }
+}
+
+let submitButton = document.getElementById("submit-button");
+
+submitButton.addEventListener('click', () => {
+  let nameInput = document.getElementById('input-name');
+  let amountInput = document.getElementById('input-amount');
+  let locationInput = document.getElementById('input-location');
+  let orderInput = document.getElementById('input-order');
+  let descriptionInput = document.getElementById('input-description');
+  console.log(`Name: ${nameInput.value}\nAmount: ${amountInput.value}\nLocation: ${locationInput.value}\nOrder: ${orderInput.value}\nDescription: ${descriptionInput.value}\nImages: ${imageInput.src}`);
+  /*let jsonFormatItem = {
+    table: []
+  }; //https://stackoverflow.com/questions/36856232/write-add-data-in-json-file-using-node-js
+  jsonFormatItem.push*/
+  nameInput.value = null;
+  amountInput.value = null;
+  locationInput.value = null;
+  orderInput.value = null;
+  description.value = null;
+})

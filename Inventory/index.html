@@ -5,14 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" >
   <script src="script.js" defer></script>
   <title>Inventory</title>
 </head>
 <body>
   <section class="container">
     <form>
-      <i class="fas fa-search"></i>
+      <i class="fas fa-solid fa-magnifying-glass"></i>
       <input type="search" name="search" id="search" placeholder="Search inventory" data-search>
     </form>
     <div class="items" data-item-cards-container>
@@ -35,39 +36,39 @@
   <section class="add-item" add-item>
     <div class="header">Add New Item</div>
     <div class="name">
-      <p>Name: </p>
-      <form>
-        <input type="user-input" name="name" id="name" placeholder="Item name">
-      </form>
+      <!--<p>Name: </p>-->
+        <input type="user-input" name="name" id="input-name" placeholder="Name">
     </div>
     <div class="amount">
-      <p>Amount: </p>
-      <form>
-        <input type="number" name="name" id="name" placeholder="0" min="0">
-      </form>
+      <!--<p>Amount: </p>-->
+      <input type="number" name="name" id="input-amount" placeholder="0" min="0" max="99" new-item-amount>
+      <div class="arrow-container">
+        <span class="arrow-up" new-item-increment-amount></span>
+        <span class="arrow-down" new-item-decrement-amount></span>
+      </div>
     </div>
     <div class="location">
-      <p>Location: </p>
-      <form>
-        <input type="user-input" name="name" id="name" placeholder="Item location">
-      </form>
+      <!--<p>Location: </p>-->
+      <input type="user-input" name="name" id="input-location" placeholder="Location">
     </div>
     <div class="order">
-      <p>Order from: </p>
-      <form>
-        <input type="user-input" name="name" id="name" placeholder="website.com">
-      </form>
+      <!--<p>Order from: </p>-->
+      <input type="user-input" name="name" id="input-order" placeholder="Website to buy">
     </div>
     <div class="description">
-      <p>Description: </p>
-      <form>
-        <input type="user-input" name="name" id="name" placeholder="Item description">
-      </form>
+      <!--<p>Description: </p>-->
+      <textarea type="user-input" name="name" id="input-description" placeholder="Description"></textarea>
     </div>
     <div class="image">
-      <form>
-        <input type="file" name="upload" accept="image/*"/>
-      </form>
+      <input type="file" id="file-input" name="upload" accept="image/*" multiple>
+      <label for="file-input">
+        <p>Add an image</p>
+      </label>
+      <p id="num-of-files">No Files Chosen</p>
+      <div id="images"></div>
+    </div>
+    <div class="submit">
+      <input type="button" value="Add Item" id="submit-button">
     </div>
   </section>
 </body>
