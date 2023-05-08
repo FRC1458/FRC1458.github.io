@@ -106,22 +106,15 @@ function preview() {
   }
 }
 
-let submitButton = document.getElementById("submit-button");
+const form = document.querySelector('[add-item]');
 
-submitButton.addEventListener('click', () => {
-  let nameInput = document.getElementById('input-name');
-  let amountInput = document.getElementById('input-amount');
-  let locationInput = document.getElementById('input-location');
-  let orderInput = document.getElementById('input-order');
-  let descriptionInput = document.getElementById('input-description');
-  console.log(`Name: ${nameInput.value}\nAmount: ${amountInput.value}\nLocation: ${locationInput.value}\nOrder: ${orderInput.value}\nDescription: ${descriptionInput.value}\nImages: ${imageInput.src}`);
-  /*let jsonFormatItem = {
-    table: []
-  }; //https://stackoverflow.com/questions/36856232/write-add-data-in-json-file-using-node-js
-  jsonFormatItem.push*/
-  nameInput.value = null;
-  amountInput.value = null;
-  locationInput.value = null;
-  orderInput.value = null;
-  description.value = null;
-})
+form.addEventListener('submit', (event => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  let dataArray = new Array();
+  for (const entry of formData.entries()){
+    dataArray.push(entry[1]);
+  }
+  console.log(dataArray);
+}))
